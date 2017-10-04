@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int FindMin(int* num, int size){
+    if(!num || size == 0)
+        return -1;
+    int start = 0,end = size - 1;
+    int target = num[size-1];//勿忘设置target！
+    while(start+1 < end){
+        int mid = start + (end - start) / 2;
+        if(num[mid] > target){
+            start = mid;
+        }else{
+            end = mid;
+        }
+    }
+    return num[start]<=num[end]? num[start]:num[end];
+}
+
+int main()
+{
+    int a[] = {3,5,6,8,-3,0,1,2};
+    int ret = FindMin(a, sizeof(a)/sizeof(int));
+    cout<<ret<<endl;
+    return 0;
+}
+
