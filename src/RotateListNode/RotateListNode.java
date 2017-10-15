@@ -10,7 +10,7 @@ package RotateListNode;
 //        在原地一次翻转完成
 
 
-//  Definition for ListNode
+//  Definition for RemoveNthNodeFromEndofList
 class ListNode {
     int val;
     ListNode next;
